@@ -1,23 +1,32 @@
-import { example } from './data.js';
-// import data from './data/lol/lol.js';
+import { filterData } from './data.js';
+
 import data from './data/ghibli/ghibli.js';
 
-const prinData = (movies) => {
+const filmsArray = data['films'];
+
+const printData = (movies) => {
     let newDiv = document.createElement('div');
     newDiv.setAttribute('id', 'container');
 
     document.getElementById('root').appendChild(newDiv);
 
-    movies.films.forEach(element => {
+    movies.forEach(element => {
         const template = `
         <div class="card">
             <div class="title">${element.title}</div>
+            <div class="release_date">${element.release_date}</div>
             <div class="photo">
                 <img src="${element.poster}">
-            </div>`;
+            </div> `;
             newDiv.innerHTML += template;
     })
 }
-prinData(data);
 
-console.log(example, data);
+const loadAll = document.getElementById("showAll")
+loadAll.addEventListener('click', () => {
+    /* Llamada de función showData para mostrar peliculas*/    
+    printData(filmsArray);
+});
+
+
+

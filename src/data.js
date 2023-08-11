@@ -1,9 +1,11 @@
-// estas funciones son de ejemplo
 
-export const example = () => {
-  return 'example';
-};
 
-export const anotherExample = () => {
-  return 'OMG';
-};
+export const filterData = (data, filterBy) => {
+  let result = [];
+  if(filterBy === 'producer'){
+    result = filmsArray.filter(films => films.producer);
+  }
+  return result;
+}
+console.log(result);
+
