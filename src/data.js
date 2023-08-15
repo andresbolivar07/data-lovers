@@ -1,11 +1,8 @@
 
-
-export const filterData = (data, filterBy) => {
-  let result = [];
-  if(filterBy === 'producer'){
-    result = filmsArray.filter(films => films.producer);
-  }
+export const filterData = (search, data) => {
+  
+  const result = data.filter(data => data.producer === search);
   return result;
 }
-console.log(result);
+
 

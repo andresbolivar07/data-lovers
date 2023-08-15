@@ -5,6 +5,11 @@ import data from './data/ghibli/ghibli.js';
 const filmsArray = data['films'];
 
 const printData = (movies) => {
+
+    if (document.getElementById('container')){
+        const comoQuiera = document.getElementById('container');
+        document.getElementById('root').removeChild(comoQuiera);
+    }
     let newDiv = document.createElement('div');
     newDiv.setAttribute('id', 'container');
 
@@ -22,11 +27,20 @@ const printData = (movies) => {
     })
 }
 
-const loadAll = document.getElementById("showAll")
+const loadAll = document.getElementById("showAll");
 loadAll.addEventListener('click', () => {
     /* Llamada de función showData para mostrar peliculas*/    
     printData(filmsArray);
 });
+
+const searchBtn = document.getElementById("submitBtn");
+searchBtn.addEventListener('click', () => {
+    const search = document.getElementById("searchInput").value;
+    const llamarAFuncion = filterData (search, data.films);
+    printData(llamarAFuncion);
+});
+
+
 
 
 
