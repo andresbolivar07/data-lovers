@@ -1,14 +1,15 @@
-import { filterData } from './data.js';
+import { filterData, sortData } from './data.js';
 
 import data from './data/ghibli/ghibli.js';
 
 const filmsArray = data['films'];
 
+
 const printData = (movies) => {
 
     if (document.getElementById('container')){
-        const comoQuiera = document.getElementById('container');
-        document.getElementById('root').removeChild(comoQuiera);
+        const cleanContainer = document.getElementById('container');
+        document.getElementById('root').removeChild(cleanContainer);
     }
     let newDiv = document.createElement('div');
     newDiv.setAttribute('id', 'container');
@@ -36,8 +37,23 @@ loadAll.addEventListener('click', () => {
 const searchBtn = document.getElementById("submitBtn");
 searchBtn.addEventListener('click', () => {
     const search = document.getElementById("searchInput").value;
-    const llamarAFuncion = filterData (search, data.films);
-    printData(llamarAFuncion);
+    const filterFunction = filterData (search, data.films, 'title');
+    printData(filterFunction);
+});
+
+
+const upwardBtn = document.getElementById("upward");
+upwardBtn.addEventListener('click', () => {
+        
+    printData(sortData(data, 'title'));
+    
+});
+
+const fallingBtn = document.getElementById("falling");
+fallingBtn.addEventListener('click', () => {
+        
+    printData(sortData(data, 'title').reverse());
+    
 });
 
 
