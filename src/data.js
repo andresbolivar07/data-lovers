@@ -7,7 +7,9 @@ export const filterData = (search, data, filterBy) => {
 };
 
 export const sortData = (data) => {
-  const arrayFilms = data['films'];
+  const arrayFilms = Array.from(data['films']);
+  // Array.from permite hacer copia de un array
+  
   let result = arrayFilms.sort(function(a,b) {
     if (a.title > b.title) {
       return 1;
