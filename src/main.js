@@ -96,7 +96,23 @@ const printStats = (movies) => {
     movies.forEach(element => {
         const template = `
         <div class="card">
-            <div class="name">${element.name}</div>
+            <table class="default">
+            <caption>Directores y número de peliculas en Studio Ghibli</caption>
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>Director</th>
+                    <th>No. de Películas</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="id">${element.id}</td>
+                    <td class="name">${element.name}</td>
+                    <td class="countMovies">${element.countMovies}</td>
+                </tr>
+            </tbody>
+            </table>
         </div> `;
 
             newDiv.innerHTML += template;
@@ -106,5 +122,6 @@ const printStats = (movies) => {
 const statsBtn = document.getElementById("stats");
 statsBtn.addEventListener('click', () => {
     const filterStats = computeStats(data);
+    console.log(filterStats);
     printStats(filterStats);
 });
