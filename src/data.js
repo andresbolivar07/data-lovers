@@ -21,4 +21,17 @@ export const sortData = (data) => {
   return result;
 }
 
+export const computeStats = (data,) => {
 
+  const arrayCharacters = data['films'];
+  console.log(arrayCharacters)
+  let totalProducer = 0;
+
+  for (let i = 1; i < arrayCharacters; i++ ) {
+    if (arrayCharacters[i].director === 'Isao Takahata') {
+      totalProducer ++;
+      console.log(totalProducer);
+    }
+  }
+  return totalProducer;
+}
