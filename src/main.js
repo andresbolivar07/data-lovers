@@ -2,8 +2,7 @@ import { filterData, sortData, computeStats } from './data.js';
 
 import data from './data/ghibli/ghibli.js';
 
-const filmsArray = data['films'];
-const reviewArray = data ['Review']
+const filmsArray = Array.from(data['films']);
 
 const printData = (movies) => {
 
@@ -20,10 +19,15 @@ const printData = (movies) => {
         const template = `
         <div class="card">
             <div class="title">${element.title}</div>
-            <div class="release_date">${element.release_date}</div>
             <div class="photo">
                 <img src="${element.poster}">
-            </div> `;
+            </div> 
+            <div class="release_date">Release date: ${element.release_date}</div>
+            <div class="description">Review: ${element.description}</div>
+            <div class="director">Director: ${element.director}</div>
+            <div class="producer">Producer: ${element.producer}</div>
+        </div>`;
+            
             newDiv.innerHTML += template;
     });
 }
@@ -52,9 +56,11 @@ fallingBtn.addEventListener('click', () => {
     printData(sortData(data, 'title').reverse());
 });
 
+const review = Array.from(data['Review'])
+
 const printReview = (review) => {
 
-    if (document.getElementById('ghibliReview')){
+    if (document.getElementById('container')){
         const cleanContainer = document.getElementById('container');
         document.getElementById('root').removeChild(cleanContainer);
     }
@@ -79,7 +85,7 @@ const printReview = (review) => {
 
 const reviewGhibli = document.getElementById("review");
 reviewGhibli.addEventListener('click', () => {
-    printReview(reviewArray);
+    printReview(review);
 });
 
 const printStats = (movies) => {
@@ -93,9 +99,8 @@ const printStats = (movies) => {
 
     document.getElementById('root').appendChild(newDiv);
 
-    movies.forEach(element => {
-        const template = `
-        <div class="card">
+    newDiv.innerHTML += `
+    <div class="card">
             <table class="default">
             <caption>Directores y número de peliculas en Studio Ghibli</caption>
             <thead>
@@ -104,24 +109,30 @@ const printStats = (movies) => {
                     <th>Director</th>
                     <th>No. de Películas</th>
                 </tr>
-            </thead>
+            </thead>`;
+    const tableStats = document.querySelector('table');
+
+    movies.forEach(element => {
+        const template = `
+        
             <tbody>
                 <tr>
                     <td class="id">${element.id}</td>
                     <td class="name">${element.name}</td>
                     <td class="countMovies">${element.countMovies}</td>
                 </tr>
-            </tbody>
-            </table>
-        </div> `;
-
-            newDiv.innerHTML += template;
+            </tbody>`;
+            tableStats.innerHTML += template;
     });
+    newDiv.innerHTML += `
+        </table>
+        </div>`;
 }
 
 const statsBtn = document.getElementById("stats");
 statsBtn.addEventListener('click', () => {
     const filterStats = computeStats(data);
-    console.log(filterStats);
     printStats(filterStats);
 });
+
+

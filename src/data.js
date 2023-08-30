@@ -1,8 +1,8 @@
 
 export const filterData = (search, data, filterBy) => {
   if (filterBy === 'title') {
-   let result = data.filter(data => data.title.toLowerCase().includes(search.toLowerCase()));
-   return result;
+    let result = data.filter(data => data.title.toLowerCase().includes(search.toLowerCase()));
+    return result;
   }
 };
 
@@ -24,7 +24,6 @@ export const sortData = (data) => {
 export const computeStats = (data,) => {
 
   const arrayCharacters = data['films'];
-  console.log(arrayCharacters)
   let hayaoMiyazaki = 0;
   let isaoTakahata = 0;
   let yoshifumiKondō = 0;
@@ -62,3 +61,4 @@ export const computeStats = (data,) => {
   response.push({id : 6, name : 'Hiromasa Yonebayashi', countMovies : hiromasaYonebayashi});
   return response;
 }
+
