@@ -22,10 +22,10 @@ const printData = (movies) => {
             <div class="photo">
                 <img src="${element.poster}">
             </div> 
-            <div class="release_date">Release date: ${element.release_date}</div>
             <div class="description">Review: ${element.description}</div>
             <div class="director">Director: ${element.director}</div>
             <div class="producer">Producer: ${element.producer}</div>
+            <div class="release_date">Release date: ${element.release_date}</div>
         </div>`;
             
             newDiv.innerHTML += template;
