@@ -76,8 +76,13 @@ const printReview = (review) => {
             <div class="release_date">${element.description}</div>
             <div class="photo">
                 <img src="${element.img}">
+            </div> 
+            <div class="release_date">${element.description2}</div>
+            <div class="photo">
                 <img src="${element.img2}">
-            </div> `;
+            </div>  
+            <div class="release_date">${element.description3}</div>
+        </div> `;
 
             newDiv.innerHTML += template;
     });
@@ -101,11 +106,11 @@ const printStats = (movies) => {
 
     newDiv.innerHTML += `
     <div class="card">
+            <div class="tableDic">
             <table class="default">
-            <caption>Directores y número de peliculas en Studio Ghibli</caption>
+            <caption>Directores y número de peliculas en Studio Ghibli.</caption>
             <thead>
                 <tr>
-                    <th></th>
                     <th>Director</th>
                     <th>No. de Películas</th>
                 </tr>
@@ -116,8 +121,7 @@ const printStats = (movies) => {
         const template = `
         
             <tbody>
-                <tr>
-                    <td class="id">${element.id}</td>
+                <tr> 
                     <td class="name">${element.name}</td>
                     <td class="countMovies">${element.countMovies}</td>
                 </tr>
@@ -126,6 +130,7 @@ const printStats = (movies) => {
     });
     newDiv.innerHTML += `
         </table>
+        </div>
         </div>`;
 }
 
