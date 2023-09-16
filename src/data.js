@@ -21,7 +21,7 @@ export const sortData = (data) => {
   return result;
 }
 
-export const computeStats = (data,) => {
+export const computeStats = (data) => {
 
   const arrayCharacters = data['films'];
   let hayaoMiyazaki = 0;
