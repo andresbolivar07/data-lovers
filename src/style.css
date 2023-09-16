@@ -41,7 +41,6 @@ main {
 
 main > div {
 
-  
     font-size: 2em;
     padding-top: 3%;
     
@@ -50,10 +49,11 @@ main > div {
 .title {
     
     
-    padding-bottom: 2%;
+    padding-bottom: 8%;
     display: flex;
     justify-content: center;
-    font-size: 32px;   
+    font-size: 1.4em;
+    font-weight: bold;   
 }
 
 .photo {
@@ -61,18 +61,18 @@ main > div {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-bottom: 2%;
+    padding-bottom: 6%;
 }
 
 .photo > img {
 
-    width: 15%;
+    width: 30%;
 }
 
 .description {
 
     display: flex;
-    font-size: 25px;
+    font-size: 0.8em;
     text-align: justify;
     margin-right: 4%;
     margin-left: 2%;
@@ -82,7 +82,7 @@ main > div {
 .director {
 
     display: flex;
-    font-size: 25px;
+    font-size: 0.8em;
     text-align: justify;
     margin-right: 4%;
     margin-left: 2%;
@@ -92,7 +92,7 @@ main > div {
 .producer {
 
     display: flex;
-    font-size: 25px;
+    font-size: 0.8em;
     text-align: justify;
     margin-right: 4%;
     margin-left: 2%;
@@ -102,7 +102,7 @@ main > div {
 .release_date {
 
     display: flex;
-    font-size: 25px;
+    font-size: 0.8em;
     text-align: justify;
     margin-right: 4%;
     margin-left: 2%;
@@ -128,11 +128,15 @@ table {
 }
 
 caption {
+
+    font-size: 1em;
     padding-bottom: 3%;
+    font-weight: bold;
 }
 
 th, td {
     
+    font-size: 1em;
     padding: 5px;
     border: 3px solid black;
 }
@@ -147,7 +151,7 @@ a{
     text-decoration: none;
     color: black;
     font-weight: bold;
-    font-size: 25px;
+    font-size: 1.4em;
 }
 
 @media(max-width: 769px) {
@@ -166,10 +170,10 @@ a{
     .title {
         
         
-        padding-bottom: 8%;
+        padding-bottom: 5%;
         display: flex;
         justify-content: center;
-        font-size: 28px;
+        font-size: 1em;
         font-weight: bold;   
     }
     
@@ -189,7 +193,7 @@ a{
     .description, .director, .producer {
     
         display: flex;
-        font-size: 20px;
+        font-size: 0.7em;
         text-align: justify;
         margin-right: 4%;
         margin-left: 2%;
@@ -200,7 +204,7 @@ a{
 
     .release_date {
         padding-bottom: 8%;
-        font-size: 20px;
+        font-size: 0.7em;
     }
 
     table {
@@ -209,17 +213,65 @@ a{
         margin: auto;
         width: 75%;
         text-align: center;
-        font-size: 18px;
+        font-size: 0.5em;
     }
  
     caption {
         padding-bottom: 10%;
         font-weight: bold;
-        font-size: 26px;
+        font-size: 1.3em;
     }
 
     a{
-        font-size: 20px;
+        font-size: 1.4em
     }
+
+}
+
+@media(min-width: 1800px) {
+
+    header > img {
+        width: 40%;
+        padding-bottom: 5%;
+    }
+
+    button {
+        font-size: 1.5em;
+    }
+
+    .photo > img {
+
+        width: 20%;
+        
+    }
+
+    .description, .director, .producer, .release_date {
+
+        font-size: 1.3em;
+    }
+
+    .title {
+        font-size: 1.8em;
+        padding-bottom: 4%;
+    }
+
+    table {
+
+        margin: auto;
+        text-align: center;
+        font-size: 1em;
+    }
+ 
+    caption {
+        padding-bottom: 10%;
+        font-weight: bold;
+        font-size: 1.5em;
+    }
+
+    a{
+        text-decoration: none;
+        color: black;
+        font-weight: bold;
+        font-size: 2em;
 
 }
